@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    height: 100vh;
+    font-size: 14px;
+}
+
+body {
+    background-color: rgb(37, 3, 44);
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.degrade {
+    background: linear-gradient(to right, #26002b, #5d046e);
+}
+
+/* Estilo do Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header img {
+    max-width: 135px;
+    margin-bottom: 20px;
+    border-radius: 60%;
+    margin-top: 15px;
+}
+
+.img-stroke {
+    width: 135px;
+    height: 135px;
+    border-radius: 60%;
+    border: 5px solid #5d046e;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 200;
+}
+
+/* Estilo texto animado */
+.txt-animado {
+    font-size: 1.7em;
+    font-weight: 200;
+    color: white;
+}
+
+.txt-animado span {
+    position: relative;
+}
+
+.txt-animado span::before {
+    content: "";
+    color: #5d046e;
+    animation: effects 18s infinite;
+}
+
+.txt-animado span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 1px solid #5d046e;
+    right: -15px;
+    top: 1px;
+    animation: cursor .8s infinite, digita 18s steps(15) infinite;
+    width: calc(100% + 18px);
+    background-color: rgb(37, 3, 44);
+}
+
+@keyframes digita {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 18px);
+    }
+}
+
+@keyframes cursor {
+    0% {
+        border-left: 2px solid rgb(37, 3, 44);
+    }
+}
+
+@keyframes effects {
+    0%, 20% {
+        content: "Dev front-end";
+    }
+
+    21%, 40% {
+        content: "Téc-informática";
+    }
+
+    41%, 60% {
+        content: "Designer gráfico";
+    }
+
+    61%, 80% {
+        content: "Editor de videos";
+    }
+
+    81%, 100% {
+        content: "Filmmaker";
+    }
+}
+
+/* Estilo botões */
+section.botoes-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+a.link button {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #5d046e;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: white;
+    transition: .2s;
+}
+
+a.link i {
+    font-size: 1.5em;
+}
+
+a.link button:hover,
+footer a.btn-footer:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo botões do Footer */
+footer {
+    text-align: center;
+    margin: 30px;
+    display: flex; /* Flexbox para alinhar os botões na linha */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+}
+
+footer a.btn-footer {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    font-size: 1.3em;
+    line-height: 60px;
+    border-radius: 60%;
+    margin: 0px 10px;
+    transition: .2s;
+    border: 2px solid #5d046e;
+}
+
+footer a.btn-footer i {
+    font-size: 1.3em; /* Ajusta o tamanho do ícone */
+}
+
+/* Media Queries para dispositivos móveis */
+@media screen and (max-width: 450px) {
+    html {
+        font-size: 10px;
+    }
+
+    header img {
+        max-width: 130px;
+        margin-bottom: 10px;
+        border-radius: 60%;
+        margin-top: 30px;
+    }
+    
+    .img-stroke {
+        width: 130px;
+        height: 130px;
+        border-radius: 60%;
+        border: 5px solid #5d046e;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .txt-animado {
+        font-size: 1.5em;
+    }
+
+    section.botoes-links {
+        gap: 13px;
+    }
+
+    a.link button {
+        font-size: 1.3em;
+    }
+
+    footer {
+        margin: 20px 0;
+    }
+
+    footer a.btn-footer {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+
+    footer a.btn-footer i {
+        font-size: 1.5em; /* Ajusta o tamanho do ícone */
+    }
+}
